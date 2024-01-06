@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pictogramas/pages/foods/food.dart';
+import 'package:pictogramas/pages/foods/drinks.dart';
 
-// Define tus variables fem y ffem aquí
 double fem = 1.0; // Reemplaza 1.0 con el valor correcto
 double ffem = 1.0; // Reemplaza 1.0 con el valor correcto
 
-// Define la función SafeGoogleFont aquí
 TextStyle SafeGoogleFont(String font,
     {double? fontSize, FontWeight? fontWeight, double? height, Color? color}) {
-  // Implementa la lógica necesaria para la función SafeGoogleFont
   return TextStyle(
     fontFamily: font,
     fontSize: fontSize,
@@ -17,35 +16,22 @@ TextStyle SafeGoogleFont(String font,
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FoodsPage extends StatelessWidget {
+  const FoodsPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: false,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Image.asset('regresar.png'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: ListView(
         children: [
           Container(
@@ -75,47 +61,67 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                Container(
-                  margin:
-                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 55 * fem),
-                  width: double.infinity,
-                  height: 219 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0xffd9d9d9),
-                  ),
-                  child: Center(
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              FoodPage()), // Reemplaza con tu ruta correcta
+                    );
+                  },
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(
+                        0 * fem, 0 * fem, 0 * fem, 55 * fem),
+                    width: double.infinity,
+                    height: 219 * fem,
+                    decoration: BoxDecoration(
+                      color: Color(0xffd9d9d9),
+                    ),
                     child: Center(
-                      child: Text(
-                        'Comidas',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 32 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: Color(0xff000000),
+                      child: Center(
+                        child: Text(
+                          'Comidas',
+                          textAlign: TextAlign.center,
+                          style: SafeGoogleFont(
+                            'Inter',
+                            fontSize: 32 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.2125 * ffem / fem,
+                            color: Color(0xff000000),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 219 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0xffd9d9d9),
-                  ),
-                  child: Center(
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              DrinksPage()), // Reemplaza con tu ruta correcta
+                    );
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 219 * fem,
+                    decoration: BoxDecoration(
+                      color: Color(0xffd9d9d9),
+                    ),
                     child: Center(
-                      child: Text(
-                        'Bebidas',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 32 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: Color(0xff000000),
+                      child: Center(
+                        child: Text(
+                          'Bebidas',
+                          textAlign: TextAlign.center,
+                          style: SafeGoogleFont(
+                            'Inter',
+                            fontSize: 32 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.2125 * ffem / fem,
+                            color: Color(0xff000000),
+                          ),
                         ),
                       ),
                     ),
