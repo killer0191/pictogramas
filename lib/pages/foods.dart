@@ -26,7 +26,7 @@ class FoodsPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Image.asset('regresar.png'),
+          icon: Image.asset('assets/regresar.png'),
           onPressed: () {
             Navigator.pop(context);
           },

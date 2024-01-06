@@ -32,7 +32,7 @@ class DrinksPage extends StatelessWidget {
               },
               child: Container(
                 margin: EdgeInsets.all(10 * fem),
-                child: Image.asset('regresar.png'),
+                child: Image.asset('assets/regresar.png'),
               ),
             ),
           ],
@@ -50,7 +50,7 @@ class DrinksPage extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.all(10 * fem),
               child: Image.asset(
-                  'home.png'), // Reemplaza 'otra_imagen.png' con tu imagen deseada
+                  'assets/home.png'), // Reemplaza 'otra_imagen.png' con tu imagen deseada
             ),
           ),
         ],
