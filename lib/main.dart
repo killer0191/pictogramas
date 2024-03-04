@@ -1,5 +1,7 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:pictogramas/pages/foods.dart';
+import 'package:pictogramas/pages/catalogo.dart';
+import 'package:pictogramas/pages/juegos.dart';
 
 double fem = 1.0;
 double ffem = 1.0;
@@ -20,15 +22,20 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
+        scaffoldBackgroundColor: Color(0xffc1c1c1),
+        appBarTheme: AppBarTheme(),
+        textTheme: TextTheme(),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(),
+        ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -36,7 +43,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -67,339 +74,149 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Center(
             child: Container(
+              padding: EdgeInsets.fromLTRB(
+                47 * fem,
+                93 * fem,
+                59 * fem,
+                101 * fem,
+              ),
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: Color(0xffc1c1c1),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Center(
                     child: Container(
                       margin: EdgeInsets.fromLTRB(
-                        responsiveMargin(10.0, context),
-                        0,
-                        responsiveMargin(10.0, context),
-                        responsiveHeight(30.0, context),
+                        0 * fem,
+                        0 * fem,
+                        0 * fem,
+                        64 * fem,
                       ),
-                      child: Center(
-                        child: Text(
-                          'Pictogramas',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Inter',
-                            fontSize: responsiveWidth(40.0, context),
-                            fontWeight: FontWeight.w400,
-                            height: responsiveHeight(1.2125, context),
-                            color: Color(0xff000000),
+                      child: Text(
+                        'Pictogramas',
+                        textAlign: TextAlign.center,
+                        style: SafeGoogleFont(
+                          'Inter',
+                          fontSize: 40 * ffem,
+                          fontWeight: FontWeight.w400,
+                          height: 1.2125 * ffem / fem,
+                          color: Color(0xff333333),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CatalogoPage(),
+                        ),
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30 * fem),
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(
+                          0 * fem,
+                          0 * fem,
+                          0 * fem,
+                          55 * fem,
+                        ),
+                        width: double.infinity,
+                        height: 219 * fem,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xff000000)),
+                          color: Color(0xffeaeaea),
+                          borderRadius: BorderRadius.circular(30 * fem),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                              '[Image url]',
+                            ),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Catálogo',
+                            textAlign: TextAlign.center,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 32 * ffem,
+                              fontWeight: FontWeight.w400,
+                              height: 1.2125 * ffem / fem,
+                              color: Color(0xff5c5c5c),
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => FoodsPage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(
-                              responsiveMargin(10.0, context),
-                              0,
-                              responsiveMargin(5.0, context),
-                              responsiveHeight(15.0, context),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => JuegosPage(),
+                        ),
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30 * fem),
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(
+                          0 * fem,
+                          0 * fem,
+                          0 * fem,
+                          55 * fem,
+                        ),
+                        width: double.infinity,
+                        height: 219 * fem,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xff000000)),
+                          color: Color(0xffeaeaea),
+                          borderRadius: BorderRadius.circular(30 * fem),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                              '[Image url]',
                             ),
-                            constraints: BoxConstraints(
-                              minHeight: responsiveHeight(100.0, context),
-                              maxHeight: responsiveHeight(118.0, context),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
                             ),
-                            decoration: BoxDecoration(
-                              color: Color(0xffd9d9d9),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Alimentos',
-                                textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Inter',
-                                  fontSize: responsiveWidth(24.0, context),
-                                  fontWeight: FontWeight.w400,
-                                  height: responsiveHeight(1.2125, context),
-                                  color: Color(0xff000000),
-                                ),
-                              ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Juegos',
+                            textAlign: TextAlign.center,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 32 * ffem,
+                              fontWeight: FontWeight.w400,
+                              height: 1.2125 * ffem / fem,
+                              color: Color(0xff5c5c5c),
                             ),
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(5.0, context),
-                            0,
-                            responsiveMargin(10.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Animales',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(10.0, context),
-                            0,
-                            responsiveMargin(5.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Emociones',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(5.0, context),
-                            0,
-                            responsiveMargin(10.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Letreros',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(10.0, context),
-                            0,
-                            responsiveMargin(5.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Lugares',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(5.0, context),
-                            0,
-                            responsiveMargin(10.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Objetos',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(10.0, context),
-                            0,
-                            responsiveMargin(5.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Partes del cuerpo',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(5.0, context),
-                            0,
-                            responsiveMargin(10.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Ropa',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(
-                            responsiveMargin(10.0, context),
-                            0,
-                            responsiveMargin(5.0, context),
-                            responsiveHeight(15.0, context),
-                          ),
-                          constraints: BoxConstraints(
-                            minHeight: responsiveHeight(100.0, context),
-                            maxHeight: responsiveHeight(118.0, context),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffd9d9d9),
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Transporte',
-                              textAlign: TextAlign.center,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: responsiveWidth(24.0, context),
-                                fontWeight: FontWeight.w400,
-                                height: responsiveHeight(1.2125, context),
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
