@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                              '[Image url]',
+                              'https://image.freepik.com/vector-gratis/ilustracion-ninos-dibujos-animados_29937-1451.jpg',
                             ),
                           ),
                           boxShadow: [
@@ -156,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 32 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2125 * ffem / fem,
-                              color: Color(0xff5c5c5c),
+                              color: Colors.black,
                             ),
                           ),
                         ),
@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                              '[Image url]',
+                              'https://image.freepik.com/vector-gratis/fondo-juego_5704-104.jpg',
                             ),
                           ),
                           boxShadow: [
@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 32 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.2125 * ffem / fem,
-                              color: Color(0xff5c5c5c),
+                              color: Colors.black,
                             ),
                           ),
                         ),

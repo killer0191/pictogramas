@@ -144,7 +144,6 @@ class FoodPage extends StatelessWidget {
         width: double.infinity,
         height: 300 * fem,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30 * fem),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.3),
@@ -155,7 +154,7 @@ class FoodPage extends StatelessWidget {
           ],
           image: DecorationImage(
             image: AssetImage(imagePath),
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
           ),
         ),
       ),
