@@ -84,19 +84,21 @@ class AnimalPage extends StatelessWidget {
                         offset: Offset(0, 3),
                       ),
                     ],
+                    image: DecorationImage(
+                      image: AssetImage('assets/animales_domesticos.jpg'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   child: Center(
-                    child: Center(
-                      child: Text(
-                        'Domesticos',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 32 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: Color(0xff000000),
-                        ),
+                    child: Text(
+                      '',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 32 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2125 * ffem / fem,
+                        color: Color(0xff000000),
                       ),
                     ),
                   ),
@@ -125,19 +127,21 @@ class AnimalPage extends StatelessWidget {
                         offset: Offset(0, 3),
                       ),
                     ],
+                    image: DecorationImage(
+                      image: AssetImage('assets/animales_salvajes.jpg'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   child: Center(
-                    child: Center(
-                      child: Text(
-                        'Salvajes',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 32 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: Color(0xff000000),
-                        ),
+                    child: Text(
+                      '',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 32 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2125 * ffem / fem,
+                        color: Color(0xff000000),
                       ),
                     ),
                   ),

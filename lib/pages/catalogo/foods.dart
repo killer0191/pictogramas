@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pictogramas/pages/catalogo/foods/food.dart';
 import 'package:pictogramas/pages/catalogo/foods/drinks.dart';
 
-double fem = 1.0; // Reemplaza 1.0 con el valor correcto
-double ffem = 1.0; // Reemplaza 1.0 con el valor correcto
+double fem = 1.0;
+double ffem = 1.0;
 
 TextStyle SafeGoogleFont(String font,
     {double? fontSize, FontWeight? fontWeight, double? height, Color? color}) {
@@ -84,19 +84,21 @@ class FoodsPage extends StatelessWidget {
                         offset: Offset(0, 3),
                       ),
                     ],
+                    image: DecorationImage(
+                      image: AssetImage('assets/comidas.jpg'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   child: Center(
-                    child: Center(
-                      child: Text(
-                        'Comidas',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 32 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: Color(0xff000000),
-                        ),
+                    child: Text(
+                      '',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 32 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2125 * ffem / fem,
+                        color: Color(0xff000000),
                       ),
                     ),
                   ),
@@ -113,7 +115,7 @@ class FoodsPage extends StatelessWidget {
                 },
                 child: Container(
                   width: double.infinity,
-                  height: 219 * fem,
+                  height: 255 * fem,
                   decoration: BoxDecoration(
                     color: Color(0xffeaeaea),
                     borderRadius: BorderRadius.circular(30 * fem),
@@ -125,19 +127,21 @@ class FoodsPage extends StatelessWidget {
                         offset: Offset(0, 3),
                       ),
                     ],
+                    image: DecorationImage(
+                      image: AssetImage('assets/bebidas.jpg'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   child: Center(
-                    child: Center(
-                      child: Text(
-                        'Bebidas',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont(
-                          'Inter',
-                          fontSize: 32 * ffem,
-                          fontWeight: FontWeight.w400,
-                          height: 1.2125 * ffem / fem,
-                          color: Color(0xff000000),
-                        ),
+                    child: Text(
+                      '',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 32 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2125 * ffem / fem,
+                        color: Color(0xff000000),
                       ),
                     ),
                   ),

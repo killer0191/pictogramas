@@ -232,14 +232,10 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
-                                image: DecorationImage(
-                                  image: AssetImage('assets/emociones.jpg'),
-                                  fit: BoxFit.cover,
-                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  '',
+                                  'Emociones',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
@@ -286,14 +282,10 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
-                                image: DecorationImage(
-                                  image: AssetImage('assets/señalamientos.jpg'),
-                                  fit: BoxFit.cover,
-                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  '',
+                                  'Letreros',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
