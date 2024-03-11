@@ -127,10 +127,14 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+                                image: DecorationImage(
+                                  image: AssetImage('assets/alimentos.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  'Alimentos',
+                                  '',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
@@ -177,10 +181,14 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+                                image: DecorationImage(
+                                  image: AssetImage('assets/animales.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  'Animales',
+                                  '',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
@@ -345,10 +353,14 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+                                image: DecorationImage(
+                                  image: AssetImage('assets/lugares.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  'Lugares',
+                                  '',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
@@ -395,10 +407,14 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+                                image: DecorationImage(
+                                  image: AssetImage('assets/objetos.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  'Objetos',
+                                  '',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
@@ -450,10 +466,14 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+                                image: DecorationImage(
+                                  image: AssetImage('assets/trasporte.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  'Transporte',
+                                  '',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
@@ -500,10 +520,15 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/partes_del_cuerpo.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  'Partes del cuerpo',
+                                  '',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',
@@ -555,10 +580,14 @@ class CatalogoPage extends StatelessWidget {
                                     offset: Offset(0, 3),
                                   ),
                                 ],
+                                image: DecorationImage(
+                                  image: AssetImage('assets/ropa.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               child: Center(
                                 child: Text(
-                                  'Ropa',
+                                  '',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Inter',

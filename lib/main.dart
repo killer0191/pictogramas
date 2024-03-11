@@ -134,9 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           borderRadius: BorderRadius.circular(30 * fem),
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(
-                              'https://image.freepik.com/vector-gratis/ilustracion-ninos-dibujos-animados_29937-1451.jpg',
-                            ),
+                            image: AssetImage('assets/cata.gif'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -149,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         child: Center(
                           child: Text(
-                            'Catálogo',
+                            '',
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Inter',
@@ -189,9 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           borderRadius: BorderRadius.circular(30 * fem),
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(
-                              'https://image.freepik.com/vector-gratis/fondo-juego_5704-104.jpg',
-                            ),
+                            image: AssetImage('assets/juegos.gif'),
                           ),
                           boxShadow: [
                             BoxShadow(
@@ -204,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         child: Center(
                           child: Text(
-                            'Juegos',
+                            '',
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Inter',
