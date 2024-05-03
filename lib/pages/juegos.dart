@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pictogramas/pages/juegos/memorama.dart';
+import 'package:pictogramas/pages/juegos/sopa_letras.dart';
+import 'package:pictogramas/main.dart';
 
 class JuegosPage extends StatelessWidget {
   const JuegosPage({Key? key}) : super(key: key);
@@ -12,16 +15,37 @@ class JuegosPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent, // Hacer el AppBar transparente
         elevation: 0, // Quitar la sombra del AppBar
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color:
-                Colors.black, // Cambiar el color del icono de retorno a negro
-          ),
-          onPressed: () {
-            Navigator.pop(context);
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MyApp(),
+              ),
+            );
           },
+          child: Container(
+            width: 250,
+            height: 250,
+            child: Image.asset('assets/regresar.png'),
+          ),
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MyApp(),
+                ),
+              );
+            },
+            child: Container(
+              //margin: EdgeInsets.all(10 * fem),
+              child: Image.asset('assets/home.png'),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -48,97 +72,137 @@ class JuegosPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 73 * fem),
-                width: double.infinity,
-                height: 121 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0xffeaeaea),
-                  borderRadius: BorderRadius.circular(30 * fem),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      spreadRadius: 2,
-                      blurRadius: 7,
-                      offset: Offset(0, 3),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          MemoramaPage(), // Navegar a MemoramaPage al hacer clic
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    'Sopa de letras',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 32 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2125 * ffem / fem,
-                      color: Color(0xff000000),
+                  );
+                },
+                child: Container(
+                  margin:
+                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 73 * fem),
+                  width: double.infinity,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/fondo_memorama.jpg'), // Ruta de la imagen de fondo
+                      fit: BoxFit
+                          .cover, // Ajustar la imagen para cubrir todo el contenedor
+                    ),
+                    borderRadius: BorderRadius.circular(30 * fem),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      '',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 32 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2125 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
                     ),
                   ),
                 ),
               ),
-              Container(
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 55 * fem),
-                width: double.infinity,
-                height: 121 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0xffeaeaea),
-                  borderRadius: BorderRadius.circular(30 * fem),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      spreadRadius: 2,
-                      blurRadius: 7,
-                      offset: Offset(0, 3),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          SopaLetrasPage(), // Navegar a SopaPage al hacer clic
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    'Memorama',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 32 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2125 * ffem / fem,
-                      color: Color(0xff000000),
+                  );
+                },
+                child: Container(
+                  margin:
+                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 55 * fem),
+                  width: double.infinity,
+                  height: 121 * fem,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/sopa_de_letra.png'), // Ruta de la imagen de fondo
+                      fit: BoxFit
+                          .cover, // Ajustar la imagen para cubrir todo el contenedor
+                    ),
+                    borderRadius: BorderRadius.circular(30 * fem),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      '',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 32 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2125 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
                     ),
                   ),
                 ),
               ),
-              Container(
-                width: double.infinity,
-                height: 121 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0xffeaeaea),
-                  borderRadius: BorderRadius.circular(30 * fem),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      spreadRadius: 2,
-                      blurRadius: 7,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    'Crucigrama',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont(
-                      'Inter',
-                      fontSize: 32 * ffem,
-                      fontWeight: FontWeight.w400,
-                      height: 1.2125 * ffem / fem,
-                      color: Color(0xff000000),
+              /*GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SopaLetrasPage()),
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 121 * fem,
+                  decoration: BoxDecoration(
+                    color: Color(0xffeaeaea),
+                    borderRadius: BorderRadius.circular(30 * fem),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        spreadRadius: 2,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Crucigrama',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont(
+                        'Inter',
+                        fontSize: 32 * ffem,
+                        fontWeight: FontWeight.w400,
+                        height: 1.2125 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ),*/
             ],
           ),
         ),

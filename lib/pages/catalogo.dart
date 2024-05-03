@@ -51,11 +51,14 @@ class CatalogoPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
+          leading: GestureDetector(
+            onTap: () {
               Navigator.pop(context);
             },
+            child: Container(
+              //margin: EdgeInsets.all(10 * fem),
+              child: Image.asset('assets/regresar.png'),
+            ),
           ),
         ),
         body: Center(

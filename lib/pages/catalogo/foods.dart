@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pictogramas/pages/catalogo/foods/food.dart';
 import 'package:pictogramas/pages/catalogo/foods/drinks.dart';
+import 'package:pictogramas/main.dart';
 
 double fem = 1.0;
 double ffem = 1.0;
@@ -23,14 +24,38 @@ class FoodsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: Image.asset('assets/regresar.png'),
-          onPressed: () {
-            Navigator.pop(context);
+        backgroundColor: Colors.transparent, // Hacer el AppBar transparente
+        elevation: 0, // Quitar la sombra del AppBar
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MyApp(),
+              ),
+            );
           },
+          child: Container(
+            width: 250,
+            height: 250,
+            child: Image.asset('assets/regresar.png'),
+          ),
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MyApp(),
+                ),
+              );
+            },
+            child: Container(
+              child: Image.asset('assets/home.png'),
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(

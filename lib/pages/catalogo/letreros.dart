@@ -21,7 +21,7 @@ class LetreroPage extends StatelessWidget {
             Navigator.pop(context);
           },
           child: Container(
-            margin: EdgeInsets.all(10 * fem),
+            //margin: EdgeInsets.all(10 * fem),
             child: Image.asset('assets/regresar.png'),
           ),
         ),
